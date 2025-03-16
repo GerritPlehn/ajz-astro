@@ -1,0 +1,65 @@
+---
+import { getCollection } from 'astro:content';
+
+type Props = {
+  upcoming: boolean
+}
+
+const {upcoming} = Astro.props
+
+type ContentWithDate = Awaited<ReturnType<typeof getCollection>>[number] & {
+  date: Date;
+};
+
+export async function getEvents() {
+  const events = (
+    await getCollection('docs', (entry) => entry.id.startsWith('veranstaltungen'))
+  ).map((event) => {
+    let eventDate: Date | null;
+    const idDateString = event.id.split('/').at(-1)?.slice(0, 10);
+    if (!idDateString) {
+      eventDate = null;
+    } else {
+      eventDate = new Date(idDateString);
+      const invalidDate = Number.isNaN(eventDate.getTime());
+      if (invalidDate) eventDate = null;
+    }
+
+    return {
+      ...event,
+      date: eventDate,
+    };
+  });
+
+  const sortedEvents = events
+    .filter((event): event is ContentWithDate => !!event.date)
+    .sort((a, b) => {
+      return a.date.getTime() - b.date.getTime();
+    });
+
+  const now = new Date();
+  const upcoming = sortedEvents.filter((event) => event.date > now).slice(0, 5);
+
+  const past = sortedEvents
+    .filter((event) => event.date <= now)
+    .slice(-5)
+    .reverse();
+
+  return { upcoming, past };
+}
+
+const events = await getEvents();
+const relevantEvents = upcoming ? events.upcoming : events.past
+
+---
+
+{
+  relevantEvents.map((e) => (
+    <p>
+      {' '}
+      {e.date?.toLocaleDateString('de-DE')} -{' '}
+      <a href={`/${e.id}`}>{e.data.title}</a>{' '}
+    </p>
+  ))
+}
+{!relevantEvents.length ? <p> Aktuell nichts, schau später noch mal vorbei. </p> : <></> }

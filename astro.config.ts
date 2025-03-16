@@ -33,12 +33,8 @@ export default defineConfig({
           autogenerate: { directory: 'kultur' },
         },
         {
-          label: 'Kalender',
-          link: 'veranstaltungen',
-        },
-        {
           label: 'Veranstaltungen',
-          autogenerate: { directory: 'events', collapsed: true },
+          autogenerate: { directory: 'veranstaltungen', collapsed: true },
         },
         {
           label: 'Offenes Angebot',

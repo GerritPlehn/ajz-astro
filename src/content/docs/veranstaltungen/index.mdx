@@ -1,0 +1,21 @@
+---
+title: Veranstaltungen
+description: 'Allgemeine Informationen rund um Veranstaltungen'
+sidebar:
+  label: Kalender
+---
+
+import Calendar from '../../../components/calendar.astro';
+
+Booking und Veranstaltungsorga: [Konzertgruppe](kultur/konzertgruppe)
+
+Hier findet ihr eine Auswahl unser nächsten und letzten Veranstaltungen.
+Weitere findet ihr in der Navigation.
+
+## Demnächst
+
+<Calendar upcoming={true} />
+
+## War schon
+
+<Calendar upcoming={false} />
