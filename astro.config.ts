@@ -47,6 +47,10 @@ export default defineConfig({
           label: 'Kontakt / Impressum',
           slug: 'kontakt',
         },
+        {
+          label: 'Social Media',
+          slug: 'social-media',
+        },
       ],
     }),
   ],
