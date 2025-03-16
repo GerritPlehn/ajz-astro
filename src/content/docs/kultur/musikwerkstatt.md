@@ -13,4 +13,4 @@ Schlagzeug, E-Gitarre, Bass, Klavier, Gesang.
 
 Instrumente sind vorhanden und ihr braucht nichts können.
 
-![Unterstützt von Teilnehmern der "Deutsche Postcode Lotterie"](../../../assets/Postcode-768x543.png)
+![Unterstützt von Teilnehmern der "Deutsche Postcode Lotterie"](../../../assets/foerderung/Postcode-768x543.png)
