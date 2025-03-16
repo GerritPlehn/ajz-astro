@@ -1,0 +1,91 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import { getCollection } from 'astro:content';
+
+type ContentWithDate = Awaited<ReturnType<typeof getCollection>>[number] & {
+  date: Date;
+};
+
+export async function getEvents() {
+  const events = (
+    await getCollection('docs', (entry) => entry.id.startsWith('events'))
+  ).map((event) => {
+    let eventDate: Date | null;
+    const idDateString = event.id.split('/').at(-1)?.slice(0, 10);
+    if (!idDateString) {
+      eventDate = null;
+    } else {
+      eventDate = new Date(idDateString);
+      const invalidDate = Number.isNaN(eventDate.getTime());
+      if (invalidDate) eventDate = null;
+    }
+
+    return {
+      ...event,
+      date: eventDate,
+    };
+  });
+
+  const sortedEvents = events
+    .filter((event): event is ContentWithDate => !!event.date)
+    .sort((a, b) => {
+      return a.date.getTime() - b.date.getTime();
+    });
+
+  const now = new Date();
+  const upcoming = sortedEvents.filter((event) => event.date > now).slice(0, 5);
+
+  const past = sortedEvents
+    .filter((event) => event.date <= now)
+    .slice(-5)
+    .reverse();
+
+  return { upcoming, past };
+}
+
+const { upcoming, past } = await getEvents();
+---
+
+<StarlightPage
+  frontmatter={{
+    title: 'Veranstaltungen',
+    description: 'Allgemeine Informationen rund um Veranstaltungen',
+  }}
+  headings={[
+    {
+      text: 'foo',
+      depth: 1,
+      slug: 'foo',
+    },
+  ]}
+>
+  <p>
+    Booking und Veranstaltungsorga: <a href="kultur/konzertgruppe">
+      Konzertgruppe</a
+    >
+  </p>
+  <p>
+    Hier findet ihr eine Auswahl unser nächsten und letzten Veranstaltungen.
+    Weitere findet ihr in der Navigation.
+  </p>
+  <h2>Demnächst</h2>
+  {
+    upcoming.map((e) => (
+      <p>
+        {' '}
+        {e.date?.toLocaleDateString('de-DE')} -{' '}
+        <a href={`/${e.id}`}>{e.data.title}</a>{' '}
+      </p>
+    ))
+  }
+  <h2>War schon</h2>
+  {
+    past.map((e) => (
+      <p>
+        {' '}
+        {e.date?.toLocaleDateString('de-DE')} -{' '}
+        <a href={`/${e.id}`}>{e.data.title}</a>{' '}
+      </p>
+    ))
+  }
+</StarlightPage>

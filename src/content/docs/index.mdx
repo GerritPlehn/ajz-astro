@@ -1,36 +1,47 @@
 ---
-title: Welcome to Starlight
-description: Get started building your docs site with Starlight.
+title: AJZ Neumünster
+description: Selbstverwaltetes Jugendzentrum seit 1972.
 template: splash
 hero:
-  tagline: Congrats on setting up a new Starlight project!
+  tagline: Selbstverwaltetes Jugendzentrum seit 1972!
   image:
-    file: ../../assets/houston.webp
+    file: ../../assets/AJZ.svg
   actions:
-    - text: Example Guide
-      link: /guides/example/
+    - text: Mehr über uns
+      link: /ueber-uns
       icon: right-arrow
-    - text: Read the Starlight docs
-      link: https://starlight.astro.build
+    - text: Instagram
+      link: https://instagram.com/ajzneumuenster
       icon: external
       variant: minimal
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import { LinkCard, CardGrid } from '@astrojs/starlight/components';
 
-## Next steps
+## Angebote
 
 <CardGrid stagger>
-	<Card title="Update content" icon="pencil">
-		Edit `src/content/docs/index.mdx` to see this page change.
-	</Card>
-	<Card title="Add new content" icon="add-document">
-		Add Markdown or MDX files to `src/content/docs` to create new pages.
-	</Card>
-	<Card title="Configure your site" icon="setting">
-		Edit your `sidebar` and other config in `astro.config.mjs`.
-	</Card>
-	<Card title="Read the docs" icon="open-book">
-		Learn more in [the Starlight Docs](https://starlight.astro.build/).
-	</Card>
+  <LinkCard
+    title="Offene Kinder-/Jugendarbeit"
+    href="offenes-angebot"
+    description="Von Montag bis Freitag stehen die Türen des AJZ offen. Alles natürlich
+    kostenlos und ohne Anmeldung."
+  ></LinkCard>
+  <LinkCard
+    title="Konzerte & Veranstaltungen"
+    href="events"
+    description="Nehme an unseren vielfältigen Veranstaltungen teil, und organisiere diese
+    selbst mit!"
+  ></LinkCard>
+  <LinkCard
+    title="Fahrradwerkstatt"
+    href="offenes-angebot/fahrradwerkstatt"
+    description="Lerne selbst dein Fahrrad zu reparieren und greife dabei auf unser Werkzeug
+    und Wissen zurück."
+  ></LinkCard>
+  <LinkCard
+    title="Musikwerkstatt"
+    href="kultur/musikwerkstatt"
+    description="Mittwochs machen wir gemeinsam Musik, komm vorbei!"
+  ></LinkCard>
 </CardGrid>
