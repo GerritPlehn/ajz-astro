@@ -12,7 +12,6 @@ export default defineConfig({
         instagram: 'https://instagram.com/ajzneumuenster',
         youtube: 'https://www.youtube.com/channel/UCOs-WiK7Hd78vFBE3c4YN_A',
       },
-      customCss: ['./src/styles/custom.css'],
       locales: {
         root: {
           label: 'Deutsch',
