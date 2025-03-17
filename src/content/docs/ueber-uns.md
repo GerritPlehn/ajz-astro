@@ -1,6 +1,7 @@
 ---
 title: Über uns
 description: Was ist das AJZ Neumünster? Über unsere Geschichte und wofür wir stehen.
+tableOfContents: true
 ---
 
 ## Was ist das AJZ Neumünster?

@@ -20,6 +20,10 @@ export default defineConfig({
           lang: 'de',
         },
       },
+      logo: {
+        src: './src/assets/AJZ.svg',
+      },
+      tableOfContents: false,
       sidebar: [
         {
           label: 'Über uns',

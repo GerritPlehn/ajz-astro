@@ -1,6 +1,7 @@
 ---
 title: Kontakt
 description: Impressum, Datenschutz und alle Informationen rund um den Kontakt mit der AJZ Neumünster
+tableOfContents: true
 ---
 
 Das AJZ Neumünster befindet sich in der Friedrichstraße 24, in der Nähe vom Bahnhof, gegenüber vom Postparkplatz.
