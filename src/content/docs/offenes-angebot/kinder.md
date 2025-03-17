@@ -13,7 +13,7 @@ Den Kindern wird hier ein Freiraum geboten, in dem sie ihre Freizeit verbringen 
 
 Immer: Tischtennis, Billard, Tischkicker, Spiele und Internetcafé.
 
-Montag ab 15:00: [Fahrradwerkstatt](../fahrradwerkstatt) mit Niklas
+Montag ab 15:00: [Fahrradwerkstatt](/offenes-angebot/fahrradwerkstatt) mit Niklas
 
 Montag ab 16:00: Fahrradprojekt mit Niklas und Yusuf
 

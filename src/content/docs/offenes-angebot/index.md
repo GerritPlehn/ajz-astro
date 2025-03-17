@@ -8,6 +8,6 @@ sidebar:
 
 Von **Montag bis Freitag** stehen die Türen des AJZ offen.
 
-Es gibt gibt [Öffnungszeiten](/oeffnungszeiten) für [Kinder](kinder), für [Jugendliche](jugendliche) und einen [Mädchentag](maedchentag).
+Es gibt gibt [Öffnungszeiten](/oeffnungszeiten) für [Kinder](/offenes-angebot/kinder), für [Jugendliche](/offenes-angebot/jugendliche) und einen [Mädchentag](/offenes-angebot/maedchentag).
 
 Alles natürlich kostenlos und ohne Anmeldung.

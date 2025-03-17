@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import starlightLinksValidator from 'starlight-links-validator';
 
 // https://astro.build/config
 export default defineConfig({
@@ -12,6 +13,7 @@ export default defineConfig({
         instagram: 'https://instagram.com/ajzneumuenster',
         youtube: 'https://www.youtube.com/channel/UCOs-WiK7Hd78vFBE3c4YN_A',
       },
+      plugins: [starlightLinksValidator()],
       locales: {
         root: {
           label: 'Deutsch',
