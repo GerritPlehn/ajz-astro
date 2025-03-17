@@ -2,6 +2,7 @@
 title: AJZ Neumünster
 description: Selbstverwaltetes Jugendzentrum seit 1972.
 template: splash
+tableOfContents: true
 hero:
   tagline: Selbstverwaltetes Jugendzentrum seit 1972!
   image:
@@ -17,6 +18,10 @@ hero:
 ---
 
 import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+import { YouTube } from '@astro-community/astro-embed-youtube';
+import { Image } from 'astro:assets';
+
+import myImage from '/src/assets/events/Vorschau-01_2025_web.jpg';
 
 ## Angebote
 
@@ -45,3 +50,13 @@ import { LinkCard, CardGrid } from '@astrojs/starlight/components';
     description="Mittwochs machen wir gemeinsam Musik, komm vorbei!"
   ></LinkCard>
 </CardGrid>
+
+## Aktuelles
+
+<Image src={myImage} alt="Aktuelles Programm der AJZ" />
+
+<YouTube
+  id="GsPu3mYeJGw"
+  title="Aus Alt mach Neu: Einweihung der neuen AJZ"
+  playlabel="Video abspielen"
+/>
